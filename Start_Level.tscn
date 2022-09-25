@@ -1,0 +1,222 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Texture/Dark/texture_03.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 1 )
+
+[node name="Start_Level" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.79104, 0 )
+width = 50.0
+height = 10.0
+depth = 50.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1893, 0 )
+operation = 2
+width = 48.0
+height = 10.0
+depth = 48.0
+material = SubResource( 2 )
+
+[node name="wall" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.938, 2.59211, -17 )
+width = 0.5
+height = 5.0
+depth = 15.0
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight2" type="SpotLight" parent="CSGCombiner/wall"]
+transform = Transform( -0.000226899, 1, -4.37114e-08, 3.82137e-15, 4.37114e-08, 1, 1, 0.000226899, -9.92189e-12, 0.132751, 0.568756, 0.146629 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="wall4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3675, 2.59211, -17 )
+width = 0.5
+height = 5.0
+depth = 15.0
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight3" type="SpotLight" parent="CSGCombiner/wall4"]
+transform = Transform( -0.000226899, 1, -4.37114e-08, 3.82137e-15, 4.37114e-08, 1, 1, 0.000226899, -9.92189e-12, -0.206024, 0.568756, 0.146629 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="wall5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -0.000226899, 0, -1, 0, 1, 0, 1, 0, -0.000226899, 0.267458, 2.59211, 9.18992 )
+width = 0.5
+height = 5.0
+depth = 22.9374
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight2" type="SpotLight" parent="CSGCombiner/wall5"]
+transform = Transform( 1, 0, -3.8216e-15, 3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, -0.189834, 0.568756, 0.0311377 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="wall6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -0.000226899, 0, -1, 0, 1, 0, 1, 0, -0.000226899, 1.41095, 2.59211, -9.8491 )
+width = 0.5
+height = 5.0
+depth = 22.9374
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="CSGCombiner/wall6"]
+transform = Transform( 1, 0, -3.8216e-15, 3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, 0, 0.568756, 0 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="wall2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.0211, 2.59211, 16.4218 )
+width = 0.5
+height = 5.0
+depth = 15.0
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight2" type="SpotLight" parent="CSGCombiner/wall2"]
+transform = Transform( 0.000226986, -1, 4.37114e-08, 3.82138e-15, 4.37114e-08, 1, -1, -0.000226986, 9.92573e-12, -0.158636, 0.568756, -0.0785389 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="wall3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.4768, 2.59211, 16.4218 )
+width = 0.5
+height = 5.0
+depth = 15.0
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00025, 0 )
+operation = 2
+radius = 2.0
+height = 3.0
+material = SubResource( 4 )
+
+[node name="SpotLight3" type="SpotLight" parent="CSGCombiner/wall3"]
+transform = Transform( 0.000226986, -1, 4.37115e-08, 3.82138e-15, 4.37115e-08, 1, -1, -0.000226986, 9.92573e-12, -0.606682, 0.568756, -0.0785389 )
+light_color = Color( 0.494118, 0.858824, 0.933333, 1 )
+light_energy = 10.0
+
+[node name="OmniLight" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3652, 2.71252, 16.5893 )
+light_color = Color( 0.054902, 0.952941, 0.639216, 1 )
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="OmniLight2" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3652, 2.71252, -17.0388 )
+light_color = Color( 0.054902, 0.952941, 0.639216, 1 )
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="OmniLight3" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3494, 2.71252, -17.0388 )
+light_color = Color( 0.054902, 0.952941, 0.639216, 1 )
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="OmniLight4" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3494, 2.71252, 16.0862 )
+light_color = Color( 0.054902, 0.952941, 0.639216, 1 )
+light_energy = 5.0
+omni_range = 10.0
+
+[node name="OmniLight5" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1003, 2.71252, -0.471202 )
+light_color = Color( 0.776471, 0.67451, 0.215686, 1 )
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="OmniLight6" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1003, 2.71252, 16.1885 )
+light_color = Color( 0.776471, 0.215686, 0.215686, 1 )
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="OmniLight7" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1003, 2.71252, -18.3688 )
+light_color = Color( 0.776471, 0.215686, 0.215686, 1 )
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="OmniLight8" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.184, 2.71252, -0.558739 )
+light_color = Color( 0.776471, 0.215686, 0.215686, 1 )
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="OmniLight9" type="OmniLight" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.775, 2.71252, -0.558739 )
+light_color = Color( 0.776471, 0.215686, 0.215686, 1 )
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource( 2 )]
+transform = Transform( 0.0408642, 0, -0.999165, 0, 1, 0, 0.999165, 0, 0.0408642, 0, 2.12415, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7447, 3.06395, 19.9849 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5175, 3.06395, -20.3214 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.641, 3.06395, -20.5201 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.641, 3.06395, 18.31 )

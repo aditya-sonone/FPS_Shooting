@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Hp.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Hp.tres" type="Theme" id=2]
+
+[node name="Hp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 525.0
+margin_top = 139.0
+margin_right = 947.0
+margin_bottom = 149.0
+theme = ExtResource( 2 )
+max_value = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hp_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 480.0
+margin_top = 137.0
+margin_right = 520.0
+margin_bottom = 151.0
+text = "H P :"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Hp_timer" to="." method="_on_Hp_timer_timeout"]
